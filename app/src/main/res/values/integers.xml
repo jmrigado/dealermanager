@@ -2,4 +2,6 @@
     <integer name="card_flip_time_full">300</integer>
     <integer name="card_flip_time_half">150</integer>
     <integer name="circular_reveal_time">300</integer>
+    <integer name="custom_wrap_content">-2</integer>
+    <integer name="custom_match_parent">-1</integer>
 </resources>

@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeActivityFragment"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_marginTop="?attr/actionBarSize">
 
     <LinearLayout
         android:orientation="vertical"
@@ -25,20 +26,20 @@
                 android:layout_height="fill_parent"
                 android:text="Bar"
                 android:drawableTop="@drawable/drink"
-                android:id="@+id/button1"
+                android:id="@+id/barCallButton"
                 android:background="@drawable/ripple_blue1"
-                android:textColor="@color/white"
-                android:layout_weight="0.5" />
+                android:layout_weight="0.5"
+                style="@style/CustomButton" />
 
             <com.rivetry.dealermanager.custom.IconButton
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:text="Chips"
                 android:drawableTop="@drawable/coins"
-                android:id="@+id/button2"
+                android:id="@+id/chipsCallButton"
                 android:background="@drawable/ripple_blue2"
-                android:textColor="@color/white"
-                android:layout_weight="0.5" />
+                android:layout_weight="0.5"
+                style="@style/CustomButton" />
         </LinearLayout>
 
         <LinearLayout
@@ -54,20 +55,20 @@
                 android:layout_height="fill_parent"
                 android:text="FSR"
                 android:drawableTop="@drawable/person"
-                android:id="@+id/button3"
+                android:id="@+id/fsrCallButton"
                 android:background="@drawable/ripple_blue3"
-                android:textColor="@color/white"
-                android:layout_weight="0.5" />
+                android:layout_weight="0.5"
+                style="@style/CustomButton" />
 
             <com.rivetry.dealermanager.custom.IconButton
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:text="Security"
                 android:drawableTop="@drawable/badge"
-                android:id="@+id/button4"
+                android:id="@+id/securityCallButton"
                 android:background="@drawable/ripple_blue4"
-                android:textColor="@color/white"
-                android:layout_weight="0.5" />
+                android:layout_weight="0.5"
+                style="@style/CustomButton" />
         </LinearLayout>
     </LinearLayout>
 
@@ -83,7 +84,7 @@
             android:text="Game Controls"
             android:drawableTop="@drawable/equalizer"
             android:background="@drawable/ripple_transparent"
-            android:textColor="@color/white"
+            style="@style/CustomButton"
             android:layout_margin="20dp"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
@@ -108,7 +109,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="X"
-                    android:textColor="@color/white"
+                    style="@style/CustomButton"
                     android:layout_margin="4dp"
                     android:layout_alignParentEnd="true"
                     android:id="@+id/btnCloseGameControls"
@@ -127,7 +128,7 @@
                     android:layout_height="fill_parent"
                     android:layout_weight="3"
                     android:text="Player Wins"
-                    android:textColor="@color/white"
+                    style="@style/CustomButton"
                     android:background="@drawable/custom_box_button"
                     android:layout_margin="2dp" />
                 <Button
@@ -135,7 +136,7 @@
                     android:layout_height="fill_parent"
                     android:layout_weight="3"
                     android:text="Banker Wins"
-                    android:textColor="@color/white"
+                    style="@style/CustomButton"
                     android:background="@drawable/custom_box_button"
                     android:layout_margin="2dp" />
                 <Button
@@ -143,7 +144,7 @@
                     android:layout_height="fill_parent"
                     android:layout_weight="3"
                     android:text="Tie"
-                    android:textColor="@color/white"
+                    style="@style/CustomButton"
                     android:background="@drawable/custom_box_button"
                     android:layout_margin="2dp" />
 
@@ -159,7 +160,7 @@
                     android:layout_height="fill_parent"
                     android:layout_weight="2"
                     android:text="Natural 8"
-                    android:textColor="@color/white"
+                    style="@style/CustomButton"
                     android:background="@drawable/custom_box_button"
                     android:layout_margin="4dp" />
                 <Button
@@ -167,7 +168,7 @@
                     android:layout_height="fill_parent"
                     android:layout_weight="2"
                     android:text="Natural 9"
-                    android:textColor="@color/white"
+                    style="@style/CustomButton"
                     android:background="@drawable/custom_box_button"
                     android:layout_margin="2dp" />
             </LinearLayout>
@@ -182,7 +183,7 @@
                     android:layout_height="fill_parent"
                     android:layout_weight="2"
                     android:text="Tiger 8"
-                    android:textColor="@color/white"
+                    style="@style/CustomButton"
                     android:background="@drawable/custom_box_button"
                     android:layout_margin="2dp" />
                 <Button
@@ -190,7 +191,7 @@
                     android:layout_height="fill_parent"
                     android:layout_weight="2"
                     android:text="Pheonix 7"
-                    android:textColor="@color/white"
+                    style="@style/CustomButton"
                     android:background="@drawable/custom_box_button"
                     android:layout_margin="2dp" />
             </LinearLayout>
@@ -205,7 +206,7 @@
                     android:layout_height="fill_parent"
                     android:layout_weight="3"
                     android:text="New Shoe"
-                    android:textColor="@color/white"
+                    style="@style/CustomButton"
                     android:background="@drawable/custom_box_button"
                     android:layout_margin="2dp" />
                 <Button
@@ -219,7 +220,7 @@
                     android:layout_height="fill_parent"
                     android:layout_weight="3"
                     android:text="Undo"
-                    android:textColor="@color/white"
+                    style="@style/CustomButton"
                     android:background="@drawable/custom_box_button"
                     android:layout_margin="2dp" />
             </LinearLayout>

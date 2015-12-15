@@ -32,4 +32,8 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
     }
 
+    public void setTootlbarTitle(String title){
+        getSupportActionBar().setTitle(title);
+    }
+
 }

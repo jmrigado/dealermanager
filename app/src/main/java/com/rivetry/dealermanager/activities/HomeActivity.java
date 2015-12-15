@@ -1,13 +1,14 @@
 package com.rivetry.dealermanager.activities;
 
-import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.FragmentManager;
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.Window;
+import android.widget.Button;
 
 import com.rivetry.dealermanager.DealerManager;
 import com.rivetry.dealermanager.R;
@@ -30,7 +31,9 @@ public class HomeActivity extends BaseActivity implements FragmentManager.OnBack
         toolbar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showLoginActivity();
+                if (null==((DealerManager) getApplication()).getUser()) {
+                    showLoginActivity();
+                }
             }
         });
 
@@ -80,8 +83,8 @@ public class HomeActivity extends BaseActivity implements FragmentManager.OnBack
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
 
-        User user;
-        if (!userAddedToMenu && null!= (user = ((DealerManager)getApplication()).getUser())){
+        final User user = ((DealerManager)getApplication()).getUser();
+        if (!userAddedToMenu && null!=user){
             final MenuItem mi = menu.add(user.getName());
             mi.setShowAsActionFlags(MenuItem.SHOW_AS_ACTION_ALWAYS);
             userAddedToMenu = true;
@@ -90,69 +93,70 @@ public class HomeActivity extends BaseActivity implements FragmentManager.OnBack
         return super.onPrepareOptionsMenu(menu);
     }
 
-    public void setTootlbarTitle(String title){
-        getSupportActionBar().setTitle(title);
-    }
-
     private void showLoginActivity(){
         navigateTo(R.id.nav_login);
     }
 
     private void logout() {
-        final AlertDialog.Builder dialog = new AlertDialog.Builder(this);
-        dialog.setView(getLayoutInflater().inflate(R.layout.dialog_logout, null))
-                .setPositiveButton("Confirm",
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                ((DealerManager) getApplication()).setUser(null);
-                                invalidateOptionsMenu();
-                            }
-                        })
-                .setNegativeButton("Cancel",
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
+        final Dialog dialog = new Dialog(this);
+        final View view = getLayoutInflater().inflate(R.layout.dialog_logout, null);
+        dialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(view);
+        ((Button)view.findViewById(R.id.btnCancel)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
 
-                            }
-                        });
-        dialog.create().show();
+        ((Button)view.findViewById(R.id.btnConfirm)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((DealerManager) getApplication()).setUser(null);
+                invalidateOptionsMenu();
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
     }
 
     private void showResetFragment(){
-            if (mShowingBack) {
-                getFragmentManager().popBackStack();
-                return;
-            }
 
-            // Flip to the back.
+        userAddedToMenu = false;
 
-            mShowingBack = true;
+        if (mShowingBack) {
+            getFragmentManager().popBackStack();
+            return;
+        }
 
-            // Create and commit a new fragment transaction that adds the fragment for the back of
-            // the card, uses custom animations, and is part of the fragment manager's back stack.
+        // Flip to the back.
+        mShowingBack = true;
 
-            getFragmentManager()
-                    .beginTransaction()
+        // Create and commit a new fragment transaction that adds the fragment for the back of
+        // the card, uses custom animations, and is part of the fragment manager's back stack.
 
-                            // Replace the default fragment animations with animator resources representing
-                            // rotations when switching to the back of the card, as well as animator
-                            // resources representing rotations when flipping back to the front (e.g. when
-                            // the system Back button is pressed).
-                    .setCustomAnimations(
-                            R.anim.card_flip_right_in, R.anim.card_flip_right_out)
+        getFragmentManager()
+                .beginTransaction()
 
-                            // Replace any fragments currently in the container view with a fragment
-                            // representing the next page (indicated by the just-incremented currentPage
-                            // variable).
-                    .replace(R.id.container, new ResetFragment())
+                        // Replace the default fragment animations with animator resources representing
+                        // rotations when switching to the back of the card, as well as animator
+                        // resources representing rotations when flipping back to the front (e.g. when
+                        // the system Back button is pressed).
+                .setCustomAnimations(
+                        R.anim.card_flip_right_in, R.anim.card_flip_right_out)
 
-                            // Add this transaction to the back stack, allowing users to press Back
-                            // to get to the front of the card.
-                    .addToBackStack(null)
+                        // Replace any fragments currently in the container view with a fragment
+                        // representing the next page (indicated by the just-incremented currentPage
+                        // variable).
+                .replace(R.id.container, new ResetFragment())
 
-                            // Commit the transaction.
-                    .commit();
+                        // Add this transaction to the back stack, allowing users to press Back
+                        // to get to the front of the card.
+                .addToBackStack(null)
+
+                        // Commit the transaction.
+                .commit();
     }
 
     public void hideResetFragment(){

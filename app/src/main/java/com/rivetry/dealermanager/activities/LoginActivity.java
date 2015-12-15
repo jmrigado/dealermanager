@@ -5,6 +5,8 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -39,7 +41,7 @@ public class LoginActivity extends BaseActivity {
      * Keep track of the login task to ensure we can cancel it if requested.
      */
     // UI references.
-    private AutoCompleteTextView mEmailView;
+    private EditText mEmailView;
     private EditText mIdNumber;
     private EditText mPasswordView;
     private View mProgressView;
@@ -49,8 +51,14 @@ public class LoginActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        setTootlbarTitle("Table 12: Baccarat");
+
         // Set up the login form.
-        mEmailView = (AutoCompleteTextView) findViewById(R.id.name);
+        mEmailView = (EditText) findViewById(R.id.name);
         mPasswordView = (EditText) findViewById(R.id.password);
         mIdNumber = (EditText) findViewById(R.id.idNumber);
         mPasswordView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
@@ -74,6 +82,7 @@ public class LoginActivity extends BaseActivity {
 
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
+
     }
 
     /**
@@ -82,6 +91,23 @@ public class LoginActivity extends BaseActivity {
      * errors are presented and no actual login attempt is made.
      */
     private void attemptLogin() {
+
+        String username = mEmailView.getText().toString().trim();
+        String idNumber = mIdNumber.getText().toString().trim();
+        String password = mPasswordView.getText().toString().trim();
+
+        if (TextUtils.isEmpty(username)) {
+//            usernameView.setError(errorMessageUsernameRequired);
+//            errorView = usernameView;
+        }
+
+        if (TextUtils.isEmpty(password)) {
+//            password.setError(errorMessagePasswordRequired);
+//            if (errorView == null) {
+//                errorView = passwordView;
+//            }
+        }
+
         final User user = new User();
         ((DealerManager)getApplication()).setUser(user);
         navigateTo(R.id.nav_home);

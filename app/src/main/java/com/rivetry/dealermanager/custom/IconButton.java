@@ -7,8 +7,9 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.widget.Button;
+import android.widget.ToggleButton;
 
-public class IconButton extends Button {
+public class IconButton extends ToggleButton {
     private static final int LEFT = 0, TOP = 1, RIGHT = 2, BOTTOM = 3;
 
     // Pre-allocate objects for layout measuring

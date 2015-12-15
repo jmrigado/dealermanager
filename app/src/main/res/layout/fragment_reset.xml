@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
+    android:layout_marginTop="?attr/actionBarSize"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -19,9 +20,18 @@
         android:layout_marginBottom="8dp"
         android:visibility="gone" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Reset Table?"
+        android:id="@+id/textView"
+        style="@style/ViewHeader"
+        android:layout_marginBottom="@dimen/linearLayoutDividerMargin"/>
+
     <LinearLayout
         android:id="@+id/login_form"
-        android:layout_width="match_parent"
+        android:layout_width="@dimen/editTextMaxWidth"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
@@ -38,7 +48,8 @@
                 android:maxLines="1"
                 android:singleLine="true"
                 android:background="@color/textBox"
-                android:padding="10dp" />
+                android:padding="10dp"
+                style="@style/LightEditTextstyle" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -55,7 +66,8 @@
                 android:maxLines="1"
                 android:singleLine="true"
                 android:background="@color/textBox"
-                android:padding="10dp" />
+                android:padding="10dp"
+                style="@style/LightEditTextstyle"/>
 
         </android.support.design.widget.TextInputLayout>
 
@@ -75,7 +87,8 @@
                 android:maxLines="1"
                 android:singleLine="true"
                 android:background="@color/textBox"
-                android:padding="10dp" />
+                android:padding="10dp"
+                style="@style/LightEditTextstyle"/>
 
         </android.support.design.widget.TextInputLayout>
 

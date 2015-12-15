@@ -3,4 +3,7 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="headerTitleSize">28sp</dimen>
+    <dimen name="linearLayoutDividerMargin">20dp</dimen>
+    <dimen name="editTextMaxWidth">@integer/custom_match_parent</dimen>
 </resources>
