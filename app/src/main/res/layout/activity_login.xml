@@ -32,7 +32,8 @@
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
         tools:context="com.rivetry.dealermanager.activities.LoginActivity"
-        android:layout_marginTop="?attr/actionBarSize">
+        android:layout_marginTop="?attr/actionBarSize"
+        android:background="@color/loginBackground">
 
         <!-- Login progress -->
         <ProgressBar
@@ -47,7 +48,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Log In"
+            android:textColor="@color/text"
+            android:text="@string/label_log_in"
             android:id="@+id/textView"
             style="@style/ViewHeader"
             android:layout_marginBottom="@dimen/linearLayoutDividerMargin"/>
@@ -123,7 +125,7 @@
                 android:layout_height="fill_parent"
                 android:text="@string/action_sign_in_short"
                 android:id="@+id/btnSignIn"
-                android:background="@drawable/ripple_blue1"
+                android:background="@drawable/ripple_grey"
                 android:textColor="@color/white"
                 android:layout_columnWeight="4"
                 android:layout_rowWeight="4"

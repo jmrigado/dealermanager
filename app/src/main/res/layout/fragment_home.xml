@@ -10,7 +10,9 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:background="@drawable/border_bottom"
+        android:paddingBottom="1px">
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -24,22 +26,28 @@
             <com.rivetry.dealermanager.custom.IconButton
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:text="Bar"
-                android:drawableTop="@drawable/drink"
+                android:drawableTop="@drawable/toggle_icon_bar"
                 android:id="@+id/barCallButton"
-                android:background="@drawable/ripple_blue1"
+                android:background="@drawable/toggle_button"
+                android:textOn="@string/label_calling"
+                android:textOff="@string/label_bar"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:layout_weight="0.5"
-                style="@style/CustomButton" />
+                style="@style/CustomToggleButton" />
 
             <com.rivetry.dealermanager.custom.IconButton
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:text="Chips"
-                android:drawableTop="@drawable/coins"
+                android:drawableTop="@drawable/toggle_icon_coins"
                 android:id="@+id/chipsCallButton"
-                android:background="@drawable/ripple_blue2"
+                android:background="@drawable/toggle_button"
+                android:textOn="@string/label_calling"
+                android:textOff="@string/label_chips"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:layout_weight="0.5"
-                style="@style/CustomButton" />
+                style="@style/CustomToggleButton" />
         </LinearLayout>
 
         <LinearLayout
@@ -53,22 +61,28 @@
             <com.rivetry.dealermanager.custom.IconButton
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:text="FSR"
-                android:drawableTop="@drawable/person"
+                android:drawableTop="@drawable/toggle_icon_fsr"
                 android:id="@+id/fsrCallButton"
-                android:background="@drawable/ripple_blue3"
+                android:background="@drawable/toggle_button"
+                android:textOn="@string/label_calling"
+                android:textOff="@string/label_fsr"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:layout_weight="0.5"
-                style="@style/CustomButton" />
+                style="@style/CustomToggleButton" />
 
             <com.rivetry.dealermanager.custom.IconButton
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:text="Security"
-                android:drawableTop="@drawable/badge"
+                android:drawableTop="@drawable/toggle_icon_security"
                 android:id="@+id/securityCallButton"
-                android:background="@drawable/ripple_blue4"
+                android:background="@drawable/toggle_button"
+                android:textOn="@string/label_calling"
+                android:textOff="@string/label_security"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:layout_weight="0.5"
-                style="@style/CustomButton" />
+                style="@style/CustomToggleButton" />
         </LinearLayout>
     </LinearLayout>
 
@@ -82,7 +96,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|right"
             android:text="Game Controls"
-            android:drawableTop="@drawable/equalizer"
+            android:drawableTop="@drawable/settings"
             android:background="@drawable/ripple_transparent"
             style="@style/CustomButton"
             android:layout_margin="20dp"
@@ -96,7 +110,6 @@
             android:layout_height="fill_parent"
             android:id="@+id/viewGameControls"
             android:layout_alignParentBottom="false"
-            android:background="@color/blue5"
             android:visibility="invisible"
             android:orientation="vertical"
             android:paddingLeft="4dp"
@@ -109,7 +122,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="X"
-                    style="@style/CustomButton"
+                    style="@style/CustomToggleButton"
                     android:layout_margin="4dp"
                     android:layout_alignParentEnd="true"
                     android:id="@+id/btnCloseGameControls"
@@ -119,110 +132,118 @@
             </RelativeLayout>
 
             <LinearLayout
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_weight="3"
-                    android:text="Player Wins"
-                    style="@style/CustomButton"
-                    android:background="@drawable/custom_box_button"
-                    android:layout_margin="2dp" />
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_weight="3"
-                    android:text="Banker Wins"
-                    style="@style/CustomButton"
-                    android:background="@drawable/custom_box_button"
-                    android:layout_margin="2dp" />
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_weight="3"
-                    android:text="Tie"
-                    style="@style/CustomButton"
-                    android:background="@drawable/custom_box_button"
-                    android:layout_margin="2dp" />
+                android:layout_height="match_parent"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp">
 
-            </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+                    <Button
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="3"
+                        android:text="@string/label_player_wins"
+                        style="@style/CustomToggleButton"
+                        android:background="@drawable/custom_box_button"
+                        android:layout_margin="@dimen/small_margin" />
+                    <Button
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="3"
+                        android:text="@string/label_banker_wins"
+                        style="@style/CustomToggleButton"
+                        android:background="@drawable/custom_box_button"
+                        android:layout_margin="@dimen/small_margin" />
+                    <Button
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="3"
+                        android:text="@string/label_tie"
+                        style="@style/CustomToggleButton"
+                        android:background="@drawable/custom_box_button"
+                        android:layout_margin="@dimen/small_margin" />
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_weight="2"
-                    android:text="Natural 8"
-                    style="@style/CustomButton"
-                    android:background="@drawable/custom_box_button"
-                    android:layout_margin="4dp" />
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_weight="2"
-                    android:text="Natural 9"
-                    style="@style/CustomButton"
-                    android:background="@drawable/custom_box_button"
-                    android:layout_margin="2dp" />
-            </LinearLayout>
+                </LinearLayout>
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_weight="2"
-                    android:text="Tiger 8"
-                    style="@style/CustomButton"
-                    android:background="@drawable/custom_box_button"
-                    android:layout_margin="2dp" />
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_weight="2"
-                    android:text="Pheonix 7"
-                    style="@style/CustomButton"
-                    android:background="@drawable/custom_box_button"
-                    android:layout_margin="2dp" />
-            </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+                    <Button
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="2"
+                        android:text="@string/label_natural8"
+                        style="@style/CustomToggleButton"
+                        android:background="@drawable/custom_box_button"
+                        android:layout_margin="4dp" />
+                    <Button
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="2"
+                        android:text="@string/label_natural9"
+                        style="@style/CustomToggleButton"
+                        android:background="@drawable/custom_box_button"
+                        android:layout_margin="@dimen/small_margin" />
+                </LinearLayout>
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_weight="3"
-                    android:text="New Shoe"
-                    style="@style/CustomButton"
-                    android:background="@drawable/custom_box_button"
-                    android:layout_margin="2dp" />
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_weight="3"
-                    android:visibility="invisible"
-                    android:layout_margin="2dp" />
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_weight="3"
-                    android:text="Undo"
-                    style="@style/CustomButton"
-                    android:background="@drawable/custom_box_button"
-                    android:layout_margin="2dp" />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+                    <Button
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="2"
+                        android:text="@string/label_tiger8"
+                        style="@style/CustomToggleButton"
+                        android:background="@drawable/custom_box_button"
+                        android:layout_margin="@dimen/small_margin" />
+                    <Button
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="2"
+                        android:text="@string/label_pheonix7"
+                        style="@style/CustomToggleButton"
+                        android:background="@drawable/custom_box_button"
+                        android:layout_margin="@dimen/small_margin" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+                    <Button
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="3"
+                        android:text="@string/label_new_shoe"
+                        style="@style/CustomToggleButton"
+                        android:background="@drawable/custom_box_button"
+                        android:layout_margin="@dimen/small_margin" />
+                    <Button
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="3"
+                        android:visibility="invisible"
+                        android:layout_margin="@dimen/small_margin" />
+                    <Button
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="3"
+                        android:text="@string/label_undo"
+                        style="@style/CustomToggleButton"
+                        android:background="@drawable/custom_box_button"
+                        android:layout_margin="@dimen/small_margin" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
 

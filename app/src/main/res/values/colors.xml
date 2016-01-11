@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">@color/blue5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#64b5f6</color>
+    <color name="colorPrimary">@color/mainBackground</color>
+    <color name="colorPrimaryDark">@color/darkBackground</color>
+    <color name="colorAccent">@color/iconText</color>
 
-    <color name="blue1">#64b5f6</color>
-    <color name="blue2">#2196f3</color>
-    <color name="blue3">#2196f3</color>
-    <color name="blue4">#1976d2</color>
-    <color name="blue5">#0d47a1</color>
+    <color name="mainBackground">#24374D</color>
+    <color name="darkBackground">#152436</color>
+    <color name="iconText">#ABCFF9</color>
+    <color name="iconTextCalling">#50E3C2</color>
+    <color name="loginBackground">#F3F5F8</color>
+    <color name="loginButton">#B9C3D3</color>
+
     <color name="white">#ffffff</color>
-    <color name="red">#f44336</color>
-    <color name="green">#4caf50</color>
-
     <color name="textBox">#e0e0e0</color>
     <color name="transparent">#00FFFFFF</color>
+    <color name="text">@android:color/primary_text_light</color>
 </resources>
