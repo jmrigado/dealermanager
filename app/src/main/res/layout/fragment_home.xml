@@ -12,7 +12,7 @@
         android:layout_height="fill_parent"
         android:layout_weight="1"
         android:background="@drawable/border_bottom"
-        android:paddingBottom="1px">
+        android:paddingBottom="1pt">
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -21,20 +21,28 @@
             android:rowCount="2"
             android:id="@+id/gridRowOneLayout"
             android:layout_weight="0.5"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@drawable/border_bottom"
+            android:paddingBottom="1px">
 
-            <com.rivetry.dealermanager.custom.IconButton
+            <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:drawableTop="@drawable/toggle_icon_bar"
-                android:id="@+id/barCallButton"
-                android:background="@drawable/toggle_button"
-                android:textOn="@string/label_calling"
-                android:textOff="@string/label_bar"
-                android:focusable="false"
-                android:focusableInTouchMode="false"
                 android:layout_weight="0.5"
-                style="@style/CustomToggleButton" />
+                android:background="@drawable/border_right"
+                android:paddingRight="1px">
+                <com.rivetry.dealermanager.custom.IconButton
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:drawableTop="@drawable/toggle_icon_bar"
+                    android:id="@+id/barCallButton"
+                    android:background="@drawable/toggle_button"
+                    android:textOn="@string/label_calling"
+                    android:textOff="@string/label_bar"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    style="@style/CustomToggleButton" />
+            </LinearLayout>
 
             <com.rivetry.dealermanager.custom.IconButton
                 android:layout_width="fill_parent"
@@ -58,18 +66,25 @@
             android:id="@+id/gridRowTwoLayout"
             android:layout_weight="0.5"
             android:orientation="horizontal">
-            <com.rivetry.dealermanager.custom.IconButton
+
+            <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:drawableTop="@drawable/toggle_icon_fsr"
-                android:id="@+id/fsrCallButton"
-                android:background="@drawable/toggle_button"
-                android:textOn="@string/label_calling"
-                android:textOff="@string/label_fsr"
-                android:focusable="false"
-                android:focusableInTouchMode="false"
                 android:layout_weight="0.5"
-                style="@style/CustomToggleButton" />
+                android:background="@drawable/border_right"
+                android:paddingRight="1px">
+                <com.rivetry.dealermanager.custom.IconButton
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:drawableTop="@drawable/toggle_icon_fsr"
+                    android:id="@+id/fsrCallButton"
+                    android:background="@drawable/toggle_button"
+                    android:textOn="@string/label_calling"
+                    android:textOff="@string/label_fsr"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    style="@style/CustomToggleButton" />
+            </LinearLayout>
 
             <com.rivetry.dealermanager.custom.IconButton
                 android:layout_width="fill_parent"
@@ -128,7 +143,8 @@
                     android:id="@+id/btnCloseGameControls"
                     android:background="@color/transparent"
                     android:textSize="16pt"
-                    android:textIsSelectable="true" />
+                    android:textIsSelectable="true"
+                    android:fontFamily="Roboto bold" />
             </RelativeLayout>
 
             <LinearLayout
@@ -158,7 +174,8 @@
                         android:text="@string/label_banker_wins"
                         style="@style/CustomToggleButton"
                         android:background="@drawable/custom_box_button"
-                        android:layout_margin="@dimen/small_margin" />
+                        android:layout_margin="@dimen/small_margin"
+                        android:fontFamily="helvetica" />
                     <Button
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"

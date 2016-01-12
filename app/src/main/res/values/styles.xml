@@ -10,6 +10,7 @@
         <item name="android:actionOverflowButtonStyle">@style/CustomActionButtonOverflow</item>
         <item name="android:textColorHint">@android:color/primary_text_light</item>
         <item name="colorControlNormal">@android:color/primary_text_dark</item>
+        <item name="android:fontFamily">sans-serif</item>
         <!--<item name="colorControlActivated">#ff0000</item>-->
         <item name="colorControlHighlight">@android:color/primary_text_dark</item>
     </style>
