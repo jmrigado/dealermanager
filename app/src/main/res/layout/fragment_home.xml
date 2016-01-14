@@ -28,7 +28,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="0.5"
-                android:background="@drawable/border_left_right"
+                android:background="@drawable/border_right"
                 android:paddingRight="1px"
                 android:paddingLeft="1px">
                 <com.rivetry.dealermanager.custom.IconButton
@@ -41,27 +41,22 @@
                     android:textOff="@string/label_bar"
                     android:focusable="false"
                     android:focusableInTouchMode="false"
-                    style="@style/CustomToggleButton" />
+                    style="@style/CustomToggleButton"
+                    android:textSize="@dimen/icon_font_size" />
             </LinearLayout>
-            <LinearLayout
+            <com.rivetry.dealermanager.custom.IconButton
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
+                android:drawableTop="@drawable/toggle_icon_coins"
+                android:id="@+id/chipsCallButton"
+                android:background="@drawable/toggle_button"
+                android:textOn="@string/label_calling"
+                android:textOff="@string/label_chips"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:layout_weight="0.5"
-                android:background="@drawable/border_right"
-                android:paddingRight="1px">
-                <com.rivetry.dealermanager.custom.IconButton
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:drawableTop="@drawable/toggle_icon_coins"
-                    android:id="@+id/chipsCallButton"
-                    android:background="@drawable/toggle_button"
-                    android:textOn="@string/label_calling"
-                    android:textOff="@string/label_chips"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"
-                    android:layout_weight="0.5"
-                    style="@style/CustomToggleButton" />
-            </LinearLayout>
+                style="@style/CustomToggleButton"
+                android:textSize="@dimen/icon_font_size" />
         </LinearLayout>
 
         <LinearLayout
@@ -79,7 +74,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="0.5"
-                android:background="@drawable/border_left_right"
+                android:background="@drawable/border_right"
                 android:paddingLeft="1px"
                 android:paddingRight="1px">
                 <com.rivetry.dealermanager.custom.IconButton
@@ -93,28 +88,23 @@
                     android:focusable="false"
                     android:focusableInTouchMode="false"
                     android:layout_weight="0.5"
-                    style="@style/CustomToggleButton" />
+                    style="@style/CustomToggleButton"
+                    android:textSize="@dimen/icon_font_size" />
             </LinearLayout>
 
-            <LinearLayout
+            <com.rivetry.dealermanager.custom.IconButton
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
+                android:drawableTop="@drawable/toggle_icon_security"
+                android:id="@+id/securityCallButton"
+                android:background="@drawable/toggle_button"
+                android:textOn="@string/label_calling"
+                android:textOff="@string/label_security"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
                 android:layout_weight="0.5"
-                android:background="@drawable/border_right"
-                android:paddingRight="1px">
-                <com.rivetry.dealermanager.custom.IconButton
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:drawableTop="@drawable/toggle_icon_security"
-                    android:id="@+id/securityCallButton"
-                    android:background="@drawable/toggle_button"
-                    android:textOn="@string/label_calling"
-                    android:textOff="@string/label_security"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"
-                    android:layout_weight="0.5"
-                    style="@style/CustomToggleButton" />
-            </LinearLayout>
+                style="@style/CustomToggleButton"
+                android:textSize="@dimen/icon_font_size" />
         </LinearLayout>
     </LinearLayout>
 
@@ -122,7 +112,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1"
-        android:paddingTop="2px"
+        android:paddingTop="1px"
         android:background="@drawable/border_top">
 
         <com.rivetry.dealermanager.custom.IconButton
@@ -137,7 +127,8 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:padding="20dp"
-            android:id="@+id/btnGameControls" />
+            android:id="@+id/btnGameControls"
+            android:textSize="@dimen/icon_font_size" />
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -185,7 +176,8 @@
                         android:text="@string/label_player_wins"
                         style="@style/CustomToggleButton"
                         android:background="@drawable/custom_box_button"
-                        android:layout_margin="@dimen/small_margin" />
+                        android:layout_margin="@dimen/small_margin"
+                        android:textSize="@dimen/icon_font_size" />
                     <Button
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
@@ -194,7 +186,8 @@
                         style="@style/CustomToggleButton"
                         android:background="@drawable/custom_box_button"
                         android:layout_margin="@dimen/small_margin"
-                        android:fontFamily="helvetica" />
+                        android:fontFamily="helvetica"
+                        android:textSize="@dimen/icon_font_size" />
                     <Button
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
@@ -202,7 +195,8 @@
                         android:text="@string/label_tie"
                         style="@style/CustomToggleButton"
                         android:background="@drawable/custom_box_button"
-                        android:layout_margin="@dimen/small_margin" />
+                        android:layout_margin="@dimen/small_margin"
+                        android:textSize="@dimen/icon_font_size" />
 
                 </LinearLayout>
 
@@ -218,7 +212,8 @@
                         android:text="@string/label_natural8"
                         style="@style/CustomToggleButton"
                         android:background="@drawable/custom_box_button"
-                        android:layout_margin="4dp" />
+                        android:layout_margin="@dimen/small_margin"
+                        android:textSize="@dimen/icon_font_size" />
                     <Button
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
@@ -226,7 +221,8 @@
                         android:text="@string/label_natural9"
                         style="@style/CustomToggleButton"
                         android:background="@drawable/custom_box_button"
-                        android:layout_margin="@dimen/small_margin" />
+                        android:layout_margin="@dimen/small_margin"
+                        android:textSize="@dimen/icon_font_size" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -241,7 +237,8 @@
                         android:text="@string/label_tiger8"
                         style="@style/CustomToggleButton"
                         android:background="@drawable/custom_box_button"
-                        android:layout_margin="@dimen/small_margin" />
+                        android:layout_margin="@dimen/small_margin"
+                        android:textSize="@dimen/icon_font_size" />
                     <Button
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
@@ -249,7 +246,8 @@
                         android:text="@string/label_pheonix7"
                         style="@style/CustomToggleButton"
                         android:background="@drawable/custom_box_button"
-                        android:layout_margin="@dimen/small_margin" />
+                        android:layout_margin="@dimen/small_margin"
+                        android:textSize="@dimen/icon_font_size" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -264,7 +262,8 @@
                         android:text="@string/label_new_shoe"
                         style="@style/CustomToggleButton"
                         android:background="@drawable/custom_box_button"
-                        android:layout_margin="@dimen/small_margin" />
+                        android:layout_margin="@dimen/small_margin"
+                        android:textSize="@dimen/icon_font_size" />
                     <Button
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
@@ -278,7 +277,8 @@
                         android:text="@string/label_undo"
                         style="@style/CustomToggleButton"
                         android:background="@drawable/custom_box_button"
-                        android:layout_margin="@dimen/small_margin" />
+                        android:layout_margin="@dimen/small_margin"
+                        android:textSize="@dimen/icon_font_size" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

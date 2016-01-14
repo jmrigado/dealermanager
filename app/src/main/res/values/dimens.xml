@@ -7,4 +7,5 @@
     <dimen name="linearLayoutDividerMargin">20dp</dimen>
     <dimen name="editTextMaxWidth">@integer/custom_match_parent</dimen>
     <dimen name="small_margin">2dp</dimen>
+    <dimen name="icon_font_size">20sp</dimen>
 </resources>
