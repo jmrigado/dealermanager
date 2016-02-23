@@ -6,6 +6,7 @@
     <dimen name="headerTitleSize">28sp</dimen>
     <dimen name="linearLayoutDividerMargin">20dp</dimen>
     <dimen name="editTextMaxWidth">@integer/custom_match_parent</dimen>
-    <dimen name="small_margin">2dp</dimen>
+    <dimen name="small_margin">6dp</dimen>
     <dimen name="icon_font_size">20sp</dimen>
+    <dimen name="btn_font_size">24sp</dimen>
 </resources>

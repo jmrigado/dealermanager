@@ -1,17 +1,15 @@
 package com.rivetry.dealermanager.fragments;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewAnimationUtils;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.ToggleButton;
 
 import com.rivetry.dealermanager.R;
 import com.rivetry.dealermanager.custom.IconButton;
@@ -34,19 +32,19 @@ public class HomeFragment extends BaseFragment {
                              Bundle savedInstanceState) {
 
         final View view = inflater.inflate(R.layout.fragment_home, container, false);
-        viewGameControls = (LinearLayout)view.findViewById(R.id.viewGameControls);
-        btnGameControls = (Button)view.findViewById(R.id.btnGameControls);
-        btnCloseGameControls = (TextView)view.findViewById(R.id.btnCloseGameControls);
+        viewGameControls = (LinearLayout) view.findViewById(R.id.viewGameControls);
+        btnGameControls = (Button) view.findViewById(R.id.btnGameControls);
+        btnCloseGameControls = (TextView) view.findViewById(R.id.btnCloseGameControls);
         btnGameControls.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showGameControlsPanel();
             }
         });
-        barCallButton = (IconButton)view.findViewById(R.id.barCallButton);
-        chipsCallButton = (IconButton)view.findViewById(R.id.chipsCallButton);
-        fsrCallButton = (IconButton)view.findViewById(R.id.fsrCallButton);
-        securityCallButton = (IconButton)view.findViewById(R.id.securityCallButton);
+        barCallButton = (IconButton) view.findViewById(R.id.barCallButton);
+        chipsCallButton = (IconButton) view.findViewById(R.id.chipsCallButton);
+        fsrCallButton = (IconButton) view.findViewById(R.id.fsrCallButton);
+        securityCallButton = (IconButton) view.findViewById(R.id.securityCallButton);
 
         btnCloseGameControls.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +56,7 @@ public class HomeFragment extends BaseFragment {
         barCallButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked){
+                if (isChecked) {
 
                 } else {
 
@@ -96,39 +94,32 @@ public class HomeFragment extends BaseFragment {
     }
 
     private void showGameControlsPanel() {
-        final int cx = (viewGameControls.getLeft() + viewGameControls.getRight()) / 2;
-        final int cy = viewGameControls.getBottom();
-
-        final int finalRadius = Math.max(viewGameControls.getWidth(), viewGameControls.getHeight());
-
-        final Animator anim = ViewAnimationUtils.createCircularReveal(viewGameControls, cx, cy, 0, finalRadius);
+        final Animation anim = AnimationUtils.loadAnimation(getActivity(), R.anim.bottom_up);
         anim.setDuration(500);
+        viewGameControls.startAnimation(anim);
         btnGameControls.setVisibility(View.GONE);
         viewGameControls.setVisibility(View.VISIBLE);
-        anim.start();
     }
 
     private void hideGameControlsPanel() {
-        final int cx = (viewGameControls.getLeft() + viewGameControls.getRight()) / 2;
-        final int cy = viewGameControls.getBottom();
-
-        final int initialRadius = viewGameControls.getWidth();
-
-        final Animator anim = ViewAnimationUtils.createCircularReveal(viewGameControls, cx, cy,initialRadius, 0);
-        anim.setDuration(getResources().getInteger(R.integer.circular_reveal_time));
-
-        anim.addListener(new AnimatorListenerAdapter() {
+        final Animation anim = AnimationUtils.loadAnimation(getActivity(), R.anim.bottom_down);
+        anim.setDuration(500);
+        anim.setAnimationListener(new Animation.AnimationListener() {
             @Override
-            public void onAnimationEnd(Animator animation) {
-                super.onAnimationEnd(animation);
+            public void onAnimationStart(Animation animation) {
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
                 viewGameControls.setVisibility(View.INVISIBLE);
                 btnGameControls.setVisibility(View.VISIBLE);
             }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
         });
-        anim.start();
+        viewGameControls.startAnimation(anim);
     }
-
-
-
-
 }
